@@ -1,90 +1,232 @@
 <p align="center">
-  <img src="logo_siipro-removebg-preview.png" alt="Licita API Logo" width="200"/>
+
+  <img src="/public/logo.png" alt="Licita App Logo" width="180"/>
+
 </p>
 
 
 
-#  Licita API - Backend SECOP III
+# 💻 Licita App - Frontend SECOP III
 
-![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-009688.svg)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=flat&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-8E75B2)
 
-Bienvenido al backend de **Licita API**, una plataforma avanzada de inteligencia artificial diseñada para revolucionar la forma en que las empresas encuentran y aplican a licitaciones públicas (SECOP).
 
-Este sistema utiliza tecnologías de vanguardia como **RAG (Retrieval-Augmented Generation)**, **Vector Search** y **LLMs (Large Language Models)** para realizar emparejamientos inteligentes entre el perfil de una empresa y las oportunidades de negocio disponibles. Técnicas de ML no supervisados tal como k-means con una distancia coseno.
+![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=black)
 
----
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)
 
-##  Tabla de Contenidos
-1. [Stack Tecnológico](#-stack-tecnológico)
-2. [Arquitectura y Características](#-arquitectura-y-características-clave)
-3. [Instalación y Despliegue](#-instalación-y-despliegue)
-4. [Documentación de Endpoints](#-documentación-de-endpoints)
-5. [Estructura del Proyecto](#-estructura-del-proyecto)
+![Vite](https://img.shields.io/badge/Vite-Bundler-646CFF?logo=vite&logoColor=white)
 
----
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white)
 
-##  Stack Tecnológico
 
-Este proyecto ha sido construido con un stack robusto y moderno, pensado para escalabilidad, rendimiento y facilidad de despliegue:
 
-### Core & Backend
-* **Lenguaje**: Python 3.12+
-* **Framework Web**: [FastAPI](https://fastapi.tiangolo.com/) (Alto rendimiento, asíncrono, validación automática).
-* **ORM**: [SQLAlchemy 2.0](https://www.sqlalchemy.org/) (Manejo eficiente de base de datos).
-* **Validación de Datos**: [Pydantic v2](https://docs.pydantic.dev/).
+Bienvenido al repositorio del cliente web de **Licita API**. Esta interfaz ha sido diseñada con una misión clara: **Humanizar la contratación pública**.
 
-### Base de Datos & Almacenamiento
-* **Base de Datos Relacional**: PostgreSQL 16.
-* **Vector Database**: **pgvector** (Extensión de Postgres para almacenamiento y búsqueda de embeddings vectoriales).
-* **Object Storage**: **MinIO** (Compatible con S3) para almacenamiento de documentos (PDFs, Anexos).
 
-### Inteligencia Artificial (AI)
-* **Embeddings**: Google Gemini (`text-embedding-004`) para vectorización de perfiles y licitaciones.
-* **LLM**: Google Gemini Pro para análisis semántico, extracción de entidades y razonamiento avanzado.
-* **Orquestación**: LangChain (para flujos de RAG y procesamiento de documentos).
 
-### Infraestructura & DevOps
-* **Contenerización**: Docker & Docker Compose.
-* **Servidor Web**: Uvicorn (ASGI).
-* **Seguridad**: JWT (JSON Web Tokens) para autenticación, Hashing de contraseñas con Bcrypt.
+A diferencia de la complejidad del SECOP tradicional, nuestra plataforma ofrece una experiencia **"Self-Explanatory" (Auto-explicativa)** y cordial, guiando a los nuevos usuarios paso a paso mediante una UI limpia, moderna y accesible.
+
+
 
 ---
 
-##  Arquitectura y Características Clave
 
-El sistema no es un simple CRUD; es un motor de recomendación inteligente.
 
-1. **Ingesta y Vectorización Automática**:
-   * Al registrar una empresa, el sistema genera automáticamente **embeddings** (vectores matemáticos) de su Razón Social y códigos CIIU.
-   * Esto permite que la empresa sea "buscable" semánticamente desde el primer momento.
+## 🔗 Enlaces Rápidos
 
-2. **Motor de Matching (RAG)**:
-   * **Match Inicial**: Búsqueda vectorial (similitud de coseno) para encontrar licitaciones semánticamente similares al perfil de la empresa.
-   * **Match Aumentado (AI)**: Un segundo paso donde un LLM evalúa los candidatos para filtrar falsos positivos y dar una explicación del porqué del match.
+* **🚀 Demo Desplegado:** [https://licita-app-demo.vercel.app](https://licita-app-demo.vercel.app) *(Reemplazar con tu link)*
 
-3. **Análisis de Mercado**:
-   * Endpoints dedicados para analizar precios históricos y competencia en licitaciones similares.
+* **📚 Documentación Backend:** [Link al Swagger/Redoc del Backend]
+
+* **🎨 Sistema de Diseño:** [Ver Design System](./DESIGN_SYSTEM.md)
+
+
 
 ---
 
-##  Instalación y Despliegue
 
-### Prerrequisitos
-* Docker y Docker Compose instalados.
-* Git.
 
-### Pasos para ejecutar
+## 💡 Filosofía de Desarrollo & UX
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone <url-del-repo>
-   cd Backend_Secop3
 
-   <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/1ca67d78-3da5-448f-88af-8033e53ff466" />
+
+### De Prototipo IA a Arquitectura Robusta
+
+El desarrollo de este frontend siguió un enfoque híbrido de **Aceleración con IA + Ingeniería de Software**:
+
+1.  **Fase de Ideación (Lovable):** Se utilizó *Lovable* para generar rápidamente una plantilla base y validar flujos de usuario (Wireframing inteligente).
+
+2.  **Fase de Ingeniería (React + Vite):** El código fue migrado y refactorizado totalmente a una arquitectura profesional en **React**. Se optimizó el renderizado, se implementó tipado estricto con TypeScript y se integró con la API del Backend.
+
+
+
+### Concepto "Cordialidad Digital"
+
+El SECOP actual es intimidante. Nuestra interfaz es "cordial":
+
+* **Carga Cognitiva Reducida:** No mostramos cientos de filtros de golpe. La información se revela progresivamente.
+
+* **Micro-interacciones:** Feedback visual inmediato al usuario (loading states, tooltips explicativos).
+
+* **Lenguaje Natural:** En lugar de códigos técnicos, usamos términos claros para describir las licitaciones.
+
+
+
+---
+
+
+
+## 📱 Las 4 Vistas Principales
+
+
+
+La aplicación se estructura en 4 módulos clave diseñados para cubrir todo el ciclo de búsqueda de oportunidades:
+
+
+
+### 1. Onboarding Inteligente (Smart Login)
+
+No es solo un formulario de registro.
+
+* **Función:** Detecta automáticamente el NIT de la empresa.
+
+* **UX:** Valida en tiempo real si la empresa ya existe en base de datos y prepara el perfilamiento de IA desde el primer segundo.
+
+* **Objetivo:** Eliminar la fricción de entrada.
+
+
+
+### 2. Dashboard de Recomendaciones (The Match)
+
+El corazón de la aplicación.
+
+* **Función:** Muestra las licitaciones que hicieron "Match" con el perfil de la empresa (procesado por el Backend).
+
+* **Visualización:** Tarjetas claras con un **"% de Compatibilidad"** y una explicación generada por IA de *por qué* esa licitación es buena para ti.
+
+
+
+### 3. Explorador de Mercado (Search & Filter)
+
+Para cuando el usuario quiere investigar manualmente.
+
+* **Función:** Buscador semántico y filtros dinámicos.
+
+* **UX:** Implementación de *Debounce* para búsquedas instantáneas sin saturar el servidor y filtros visuales (tags) fáciles de activar/desactivar.
+
+
+
+### 4. Vista de Detalle y Análisis
+
+La inmersión profunda.
+
+* **Función:** Desglosa los pliegos de la licitación de forma legible.
+
+* **Feature Clave:** Muestra gráficas de precios históricos y competencia (consumiendo los endpoints de análisis de mercado), permitiendo tomar decisiones basadas en datos, no en intuición.
+
+
+
+---
+
+
+
+## 🛠️ Stack Tecnológico
+
+
+
+| Tecnología | Propósito |
+
+| :--- | :--- |
+
+| **React 18** | Librería principal de UI (Component Based). |
+
+| **TypeScript** | Seguridad de tipos y mantenibilidad del código. |
+
+| **Vite** | Build tool de próxima generación (Hot Module Replacement instantáneo). |
+
+| **Tailwind CSS** | Estilizado rápido y responsive. |
+
+| **Shadcn/ui** | Colección de componentes accesibles y reutilizables. |
+
+| **React Query** | Gestión de estado asíncrono y caché de datos del servidor. |
+
+| **React Router** | Navegación SPA (Single Page Application). |
+
+
+
+---
+
+
+
+## 🚀 Instalación y Ejecución
+
+
+
+Sigue estos pasos para levantar el entorno de desarrollo:
+
+
+
+```bash
+
+# 1. Clonar el repositorio
+
+git clone <url-del-repo-frontend>
+
+
+
+# 2. Instalar dependencias
+
+npm install
+
+
+
+# 3. Configurar Variables de Entorno
+
+# Crea un archivo .env en la raíz y conecta tu Backend
+
+echo "VITE_API_URL=http://localhost:8000/api/v1" > .env
+
+
+
+# 4. Correr el servidor de desarrollo
+
+npm run dev
+
+
+
+
+
+src/
+
+├── components/         # Bloques de UI (Botones, Cards, Modales)
+
+│   └── ui/             # Componentes base de Shadcn
+
+├── hooks/              # Lógica reutilizable (useAuth, useFetchLicitaciones)
+
+├── lib/                # Utilidades y configuración de clientes (Axios)
+
+├── pages/              # Las 4 Vistas Principales
+
+│   ├── Auth/           # Login & Register
+
+│   ├── Dashboard/      # Vista de Matches
+
+│   ├── Explore/        # Buscador
+
+│   └── Analysis/       # Detalle de Licitación
+
+├── services/           # Comunicación con la API (Endpoints)
+
+└── App.tsx             # Configuración de Rutas
+
+
+```
+
+
+
+
+
 
 
 <p align="center">
