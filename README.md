@@ -4,7 +4,7 @@
 
 
 
-# 💻 Licita App - Frontend SECOP III
+#  Licita App - Frontend SECOP III
 
 
 
@@ -30,21 +30,20 @@ A diferencia de la complejidad del SECOP tradicional, nuestra plataforma ofrece 
 
 
 
-## 🔗 Enlaces Rápidos
+##  Enlaces Rápidos
 
-* **🚀 Demo Desplegado:** [https://licita-app-demo.vercel.app](https://licita-app-demo.vercel.app) *(Reemplazar con tu link)*
+* ** Demo Desplegado:** [https://licita-app-demo.vercel.app](https://licita-app-demo.vercel.app) *(Reemplazar con tu link)*
 
-* **📚 Documentación Backend:** [Link al Swagger/Redoc del Backend]
+* ** Documentación Backend:** [Link al Swagger/Redoc del Backend]
 
-* **🎨 Sistema de Diseño:** [Ver Design System](./DESIGN_SYSTEM.md)
+* ** Sistema de Diseño:** [Ver Design System](./DESIGN_SYSTEM.md)
 
 
 
 ---
 
 
-
-## 💡 Filosofía de Desarrollo & UX
+##  Filosofía de Desarrollo & UX
 
 
 
@@ -74,7 +73,7 @@ El SECOP actual es intimidante. Nuestra interfaz es "cordial":
 
 
 
-## 📱 Las 4 Vistas Principales
+## Las 4 Vistas Principales
 
 
 
@@ -128,35 +127,28 @@ La inmersión profunda.
 
 
 
-## 🛠️ Stack Tecnológico
+##  Stack Tecnológico
 
 
+
+##  Stack Tecnológico
 
 | Tecnología | Propósito |
-
 | :--- | :--- |
-
 | **React 18** | Librería principal de UI (Component Based). |
-
 | **TypeScript** | Seguridad de tipos y mantenibilidad del código. |
-
 | **Vite** | Build tool de próxima generación (Hot Module Replacement instantáneo). |
-
 | **Tailwind CSS** | Estilizado rápido y responsive. |
-
 | **Shadcn/ui** | Colección de componentes accesibles y reutilizables. |
-
 | **React Query** | Gestión de estado asíncrono y caché de datos del servidor. |
-
 | **React Router** | Navegación SPA (Single Page Application). |
-
 
 
 ---
 
 
 
-## 🚀 Instalación y Ejecución
+##  Instalación y Ejecución
 
 
 
