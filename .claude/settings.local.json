@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"New-Item -ItemType Directory -Force -Path ''C:\\Users\\TRABAJO\\code\\pliego-seguro\\src\\application\\use-cases\\auth''\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
