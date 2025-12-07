@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Licita API Logo" width="200"/>
+  <img src="logo_siipro-removebg-preview.png" alt="Licita API Logo" width="200"/>
 </p>
 
 #  Licita API - Backend SECOP III
