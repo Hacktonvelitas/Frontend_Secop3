@@ -1,7 +1,5 @@
 <p align="center">
-
-  <img src="logo_siipro-removebg-preview.png alt="Licita App Logo" width="180"/>
-
+  <img src="logo_siipro-removebg-preview.png" alt="Licita App Logo" width="180"/>
 </p>
 
 
