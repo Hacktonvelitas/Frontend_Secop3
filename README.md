@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+<p align="center">
+  <img src="assets/logo.png" alt="Licita API Logo" width="200"/>
+</p>
 
-## Project info
+#  Licita API - Backend SECOP III
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-009688.svg)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=flat&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-8E75B2)
 
-## How can I edit this code?
+Bienvenido al backend de **Licita API**, una plataforma avanzada de inteligencia artificial diseñada para revolucionar la forma en que las empresas encuentran y aplican a licitaciones públicas (SECOP).
 
-There are several ways of editing your application.
+Este sistema utiliza tecnologías de vanguardia como **RAG (Retrieval-Augmented Generation)**, **Vector Search** y **LLMs (Large Language Models)** para realizar emparejamientos inteligentes entre el perfil de una empresa y las oportunidades de negocio disponibles. Técnicas de ML no supervisados tal como k-means con una distancia coseno.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+##  Tabla de Contenidos
+1. [Stack Tecnológico](#-stack-tecnológico)
+2. [Arquitectura y Características](#-arquitectura-y-características-clave)
+3. [Instalación y Despliegue](#-instalación-y-despliegue)
+4. [Documentación de Endpoints](#-documentación-de-endpoints)
+5. [Estructura del Proyecto](#-estructura-del-proyecto)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+##  Stack Tecnológico
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Este proyecto ha sido construido con un stack robusto y moderno, pensado para escalabilidad, rendimiento y facilidad de despliegue:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Core & Backend
+* **Lenguaje**: Python 3.12+
+* **Framework Web**: [FastAPI](https://fastapi.tiangolo.com/) (Alto rendimiento, asíncrono, validación automática).
+* **ORM**: [SQLAlchemy 2.0](https://www.sqlalchemy.org/) (Manejo eficiente de base de datos).
+* **Validación de Datos**: [Pydantic v2](https://docs.pydantic.dev/).
 
-Follow these steps:
+### Base de Datos & Almacenamiento
+* **Base de Datos Relacional**: PostgreSQL 16.
+* **Vector Database**: **pgvector** (Extensión de Postgres para almacenamiento y búsqueda de embeddings vectoriales).
+* **Object Storage**: **MinIO** (Compatible con S3) para almacenamiento de documentos (PDFs, Anexos).
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Inteligencia Artificial (AI)
+* **Embeddings**: Google Gemini (`text-embedding-004`) para vectorización de perfiles y licitaciones.
+* **LLM**: Google Gemini Pro para análisis semántico, extracción de entidades y razonamiento avanzado.
+* **Orquestación**: LangChain (para flujos de RAG y procesamiento de documentos).
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Infraestructura & DevOps
+* **Contenerización**: Docker & Docker Compose.
+* **Servidor Web**: Uvicorn (ASGI).
+* **Seguridad**: JWT (JSON Web Tokens) para autenticación, Hashing de contraseñas con Bcrypt.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+##  Arquitectura y Características Clave
 
-**Edit a file directly in GitHub**
+El sistema no es un simple CRUD; es un motor de recomendación inteligente.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Ingesta y Vectorización Automática**:
+   * Al registrar una empresa, el sistema genera automáticamente **embeddings** (vectores matemáticos) de su Razón Social y códigos CIIU.
+   * Esto permite que la empresa sea "buscable" semánticamente desde el primer momento.
 
-**Use GitHub Codespaces**
+2. **Motor de Matching (RAG)**:
+   * **Match Inicial**: Búsqueda vectorial (similitud de coseno) para encontrar licitaciones semánticamente similares al perfil de la empresa.
+   * **Match Aumentado (AI)**: Un segundo paso donde un LLM evalúa los candidatos para filtrar falsos positivos y dar una explicación del porqué del match.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. **Análisis de Mercado**:
+   * Endpoints dedicados para analizar precios históricos y competencia en licitaciones similares.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+##  Instalación y Despliegue
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Prerrequisitos
+* Docker y Docker Compose instalados.
+* Git.
 
-## How can I deploy this project?
+### Pasos para ejecutar
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. **Clonar el repositorio**:
+   ```bash
+   git clone <url-del-repo>
+   cd Backend_Secop3
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+   <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/1ca67d78-3da5-448f-88af-8033e53ff466" />
