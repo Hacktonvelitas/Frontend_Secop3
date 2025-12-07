@@ -2,6 +2,8 @@
   <img src="logo_siipro-removebg-preview.png" alt="Licita API Logo" width="200"/>
 </p>
 
+
+
 #  Licita API - Backend SECOP III
 
 ![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
@@ -83,3 +85,8 @@ El sistema no es un simple CRUD; es un motor de recomendación inteligente.
    cd Backend_Secop3
 
    <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/1ca67d78-3da5-448f-88af-8033e53ff466" />
+
+
+<p align="center">
+  <img src="imagen_2025-12-07_112959860.png" alt="Licita API Logo" width="200"/>
+</p>
