@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRegister } from '@/hooks/use-register';
+import { useCreateCompany } from '@/hooks/use-create-company';
+import { RegisterData } from '@/domain/repositories/IAuthRepository';
+import { CreateCompanyData } from '@/domain/repositories/ICompanyRepository';
 import { Eye, EyeOff, ArrowRight, Check } from 'lucide-react';
 import logoSiipro from '@/images/logo_siipro.png';
 
@@ -15,7 +18,10 @@ export default function Register() {
     nombreEmpresa: ''
   });
   const [error, setError] = useState('');
-  const { mutate: register, isPending } = useRegister();
+  const { mutate: register, isPending: isRegisterPending } = useRegister();
+  const { mutate: createCompany, isPending: isCompanyPending } = useCreateCompany();
+
+  const isPending = isRegisterPending || isCompanyPending;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({
@@ -31,19 +37,53 @@ export default function Register() {
       setError('Por favor completa todos los campos');
       return;
     }
-    console.log(formData);
 
-    register({
-      nombre: formData.nombre,
-      email: formData.email,
-      password: formData.password,
-      nombreEmpresa: formData.nombreEmpresa
-    }, {
-      onSuccess: () => {
-        navigate('/onboarding');
+    setError('');
+
+    const createCompanyPayload: CreateCompanyData = {
+      razon_social: formData.nombreEmpresa,
+      ciiu1: '',
+      ciiu2: '',
+      ciiu3: '',
+      ciiu4: '',
+      pais: 'Colombia',
+      departamento: '',
+      municipio: '',
+      direccion_legal: '',
+      correo_contacto: formData.email,
+      fecha_constitucion: new Date().toISOString().split('T')[0],
+      anios_existencia: 0,
+      tamano_empresarial: '',
+      nit: formData.nombreEmpresa
+    };
+
+    console.log('Payload crear empresa:', createCompanyPayload);
+
+    createCompany(createCompanyPayload, {
+      onSuccess: (companyData) => {
+        console.log('Empresa creada exitosamente:', companyData);
+
+        const registerPayload: RegisterData = {
+          email: formData?.email,
+          nombre_completo: formData?.nombre,
+          empresa_nit: companyData.nit,
+          is_active: true,
+          password: formData?.password
+        };
+
+        console.log('Payload registrar usuario:', registerPayload);
+
+        register(registerPayload, {
+          onSuccess: () => {
+            navigate('/onboarding');
+          },
+          onError: (err: any) => {
+            setError(err.message || 'Error al registrar usuario');
+          }
+        });
       },
       onError: (err: any) => {
-        setError(err.message || 'Error al registrar usuario');
+        setError(err.message || 'Error al crear empresa');
       }
     });
   };

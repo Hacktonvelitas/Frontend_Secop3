@@ -2,10 +2,10 @@ import { User } from '../entities/User.entity';
 
 export interface RegisterData {
   email: string;
+  nombre_completo: string;
+  empresa_nit: string;
+  is_active: boolean;
   password: string;
-  nombre: string;
-  nombreEmpresa: string;
-  nit?: string; // Optional now, since form doesn't strictly require it (or it's auto-filled)
 }
 
 export interface IAuthRepository {

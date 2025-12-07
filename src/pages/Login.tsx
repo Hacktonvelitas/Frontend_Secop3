@@ -14,13 +14,15 @@ export default function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Email:', email);
+    console.log('Password:', password);
 
     if (!email || !password) {
       setError('Por favor completa todos los campos');
       return;
     }
 
-    login({ email, pass: password }, {
+    login({ email, password: password }, {
       onSuccess: () => {
         navigate('/dashboard');
       },

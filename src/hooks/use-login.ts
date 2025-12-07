@@ -10,11 +10,11 @@ const loginUseCase = new LoginUseCase(authRepository);
 
 interface LoginParams {
   email: string;
-  pass: string;
+  password: string;
 }
 
 export function useLogin() {
   return useMutation({
-    mutationFn: ({ email, pass }: LoginParams) => loginUseCase.execute(email, pass),
+    mutationFn: ({ email, password }: LoginParams) => loginUseCase.execute(email, password),
   });
 }

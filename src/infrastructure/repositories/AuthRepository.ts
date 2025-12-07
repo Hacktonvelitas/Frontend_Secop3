@@ -13,14 +13,16 @@ export class AuthRepository implements IAuthRepository {
 
     const response = await this.authService.login(payload);
 
+    console.log('Response en AuthRepository.login:', response);
+
     return {
-      id: response.user.id,
-      email: response.user.email,
-      nombre: response.user.name,
+      id: response.user?.id?.toString() || response.id?.toString() || '0',
+      email: response.user?.email || response.email || email,
+      nombre: response.user?.name || response.user?.nombre_completo || response.nombre_completo || 'Usuario',
       rol: 'usuario',
       empresa: {
-        razonSocial: 'Empresa Demo', // Mock data since login might not return full company details in this simple mock
-        nit: '999999999',
+        razonSocial: response.user?.empresa_nit || response.empresa_nit || 'Empresa',
+        nit: response.user?.empresa_nit || response.empresa_nit || '000000000',
         sector: 'Tecnología'
       }
     };
@@ -32,25 +34,17 @@ export class AuthRepository implements IAuthRepository {
   }
 
   async register(data: RegisterData): Promise<User> {
-    const payload = {
-      email: data.email,
-      nombre_completo: data.nombre,
-      empresa_nit: data.nit || "123", // Default to "123" as requested
-      is_active: true,
-      password: data.password
-    };
-
-    const response = await this.authService.register(payload);
+    const response = await this.authService.register(data);
 
     return {
-      id: response.user.id,
-      email: response.user.email,
-      nombre: response.user.name,
+      id: response.id?.toString() || '0',
+      email: response.email || data.email,
+      nombre: response.nombre_completo || data.nombre_completo,
       rol: 'usuario',
       empresa: {
-        razonSocial: data.nombreEmpresa, // From input data
-        nit: payload.empresa_nit,
-        sector: 'Sin sector' // Default
+        razonSocial: data.empresa_nit,
+        nit: data.empresa_nit,
+        sector: 'Sin sector'
       }
     };
   }

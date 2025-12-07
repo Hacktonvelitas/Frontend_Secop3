@@ -27,12 +27,12 @@ export class RegisterUseCase {
       throw new Error('La contraseña debe tener al menos 6 caracteres');
     }
 
-    if (!data.nombre || data.nombre.trim() === '') {
+    if (!data.nombre_completo || data.nombre_completo.trim() === '') {
       throw new Error('El nombre es requerido');
     }
 
-    if (!data.nombreEmpresa || data.nombreEmpresa.trim() === '') {
-      throw new Error('El nombre de la empresa es requerido');
+    if (!data.empresa_nit || data.empresa_nit.trim() === '') {
+      throw new Error('El NIT de la empresa es requerido');
     }
   }
 }
